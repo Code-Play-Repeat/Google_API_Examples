@@ -1,0 +1,105 @@
+<html>
+	<head>
+	
+		<title>Lab 7-Google maps API</title>
+
+		<style>
+			body,td,a,div,.p{font-family:arial,sans-serif}
+			div,td{color:#000000}
+			a:link,.w,.w a:link{color:#0000cc}
+			a:visited{color:#551a8b}
+			a:active{color:#ff0000}
+		</style>
+		<script language='javascript'></script>
+        <script type="text/javascript" src="http://www.google.com/jsapi?key=AIzaSyD3GuiPBanAqQ6HVnu8o9WUt4dOMbafUaI"></script>
+        <script language="javascript">
+            google.load("maps", "2.x");
+            var points = new Array();
+            var map;
+            function initialize() {
+                map = new google.maps.Map2(document.getElementById("map"));
+                map.setCenter(new GLatLng(37.297663,-120.476421), 14);
+                map.addControl(new GSmallMapControl());
+                map.addControl(new GMapTypeControl());
+                map.addControl(new GScaleControl()); 
+		
+		var point1 = new GLatLng(37.297663,-120.476421);
+		var marker1 = new GMarker(point1);
+		map.addOverlay(marker1);
+		GEvent.addListener(marker1, "click", function(){marker1.openInfoWindowHtml("Downtown Merced");});
+
+		var point2 = new GLatLng(37.381888781772936,-120.45135498046875);
+		var marker2 = new GMarker(point2);
+		var distance1to2 = point2.distanceFrom(point1);
+		map.addOverlay(marker2);
+		GEvent.addListener(marker2, "click", function(){marker2.openInfoWindowHtml("Merced Golf and Country Club, Old Lake Road, Distance from Downtown to Merced Golf and Country Club" + " " + distance1to2 + "  ++Street Distance: " + 6.8);});
+
+		var point3 = new GLatLng(37.36655889907395,-120.42236566543579);
+		var marker3 = new GMarker(point3);
+		map.addOverlay(marker3);
+		var distance2to3 = point3.distanceFrom(point2);
+		GEvent.addListener(marker3, "click", function(){marker3.openInfoWindowHtml("School of Engineering, UC Merced, Distance from Merced Golf and Country Club to School of Engineering" + " " + distance2to3 + "  ++Street Distance: " + 3.2);});
+
+		var point4 = new GLatLng(37.3334713198836,-120.48381507396698);
+		var marker4 = new GMarker(point4);
+		map.addOverlay(marker4);
+		var distance3to4 = point4.distanceFrom(point3);
+		GEvent.addListener(marker4, "click", function(){marker4.openInfoWindowHtml(" Village Landing, 3600 San Jose Ave, Distance from School of Engineering to Village Landing" + " " + distance3to4 + "  ++Street Distance: " + 5.8);});
+
+		var point5 = new GLatLng(37.31815287758729,-120.46972274780273);
+		var marker5 = new GMarker(point5);
+		map.addOverlay(marker5);
+		var distance4to5 = point5.distanceFrom(point4);
+		GEvent.addListener(marker5, "click", function(){marker5.openInfoWindowHtml("3095 G Street, Distance from Village Landing to 3095 G Street" + " " + distance4to5 +"  ++Street Distance: " + 1.8);});
+
+		var point6 = new GLatLng(37.373942871048136,-120.4304552078247);
+		var marker6 = new GMarker(point6);
+		map.addOverlay(marker6);
+		var distance5to6 = point6.distanceFrom(point5);
+		GEvent.addListener(marker6, "click", function(){marker6.openInfoWindowHtml("Yosemite Lake, Lake Road, Distance from 3095 G Street to Yosemite Lake, Lake Road" + " " + distance5to6 +"  ++Street Distance: " + 5.7);});
+
+		var point7 = new GLatLng(37.321207430564165,-120.48357367515564);
+		var marker7 = new GMarker(point7);
+		map.addOverlay(marker7);
+		var distance6to7 = point7.distanceFrom(point6);
+		GEvent.addListener(marker7, "click", function(){marker7.openInfoWindowHtml("Merced Mall, W Olive Ave, Distance from Yosemite Lake, Lake Road to Merced Mall" + " " + distance6to7 +"  ++Street Distance: " + 6.4);});
+
+		var point8 = new GLatLng(37.31212019741566,-120.47854989767074);
+		var marker8 = new GMarker(point8);
+		map.addOverlay(marker8);
+		var distance7to8 = point8.distanceFrom(point7);
+		GEvent.addListener(marker8, "click", function(){marker8.openInfoWindowHtml("Mercy Medical Center Merced, 2700 M Street, Distance from Merced Mall to Mercy Medical Center" + " " + distance7to8 +"  ++Street Distance: " + 1.2);});
+
+		var point9 = new GLatLng(37.31290524118971,-120.48418521881103);
+		var marker9 = new GMarker(point9);
+		map.addOverlay(marker9);
+		var distance8to9 = point9.distanceFrom(point8);
+		GEvent.addListener(marker9, "click", function(){marker9.openInfoWindowHtml("Applegate Park, 2500 R Street, Distance from Mercy Medical Center to Applegate Park" + " " + distance8to9 +"  ++Street Distance: " + 0.5);});
+
+		var point10 = new GLatLng(37.30702574677272,-120.47590255737304);
+		var marker10 = new GMarker(point10);
+		map.addOverlay(marker10);
+		var distance9to10 = point10.distanceFrom(point9);
+		GEvent.addListener(marker10, "click", function(){marker10.openInfoWindowHtml("Merced Amtrak Station, 299 W 24th St, Distance from Applegate Park to Merced Amtrak Station" + " " + distance9to10 +"  ++Street Distance: " + 0.7);});
+            }
+            google.setOnLoadCallback(initialize);
+        </script>
+	</head>
+	<body>
+
+		<!-- OPTIONAL: include this if you want history support -->
+		<iframe src="javascript:''" id="__gwt_historyFrame" style="width:0;height:0;border:0"></iframe>
+
+		<h1>Lab 7 - Google Maps API</h1>
+		<div id="search-form"></div>
+		<div id="map" style="height: 500px;">
+			Map goes here.
+		</div>
+
+		<table align=center>
+			<tr>
+				<td id="slot1"></td><td id="slot2"></td>
+			</tr>
+		</table>
+	</body>
+</html>

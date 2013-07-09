@@ -1,0 +1,103 @@
+<html>
+	<head>
+	
+		<title>Lab 7-Field Work Group 5</title>
+
+		<style>
+			body,td,a,div,.p{font-family:arial,sans-serif}
+			div,td{color:#000000}
+			a:link,.w,.w a:link{color:#0000cc}
+			a:visited{color:#551a8b}
+			a:active{color:#ff0000}
+		</style>
+		<script language='javascript'></script>
+        <script type="text/javascript" src="http://www.google.com/jsapi?key=AIzaSyD3GuiPBanAqQ6HVnu8o9WUt4dOMbafUaI"></script>
+        <script language="javascript">
+            google.load("maps", "2.x");
+            var points = new Array();
+            var map;
+            function initialize() {
+                map = new google.maps.Map2(document.getElementById("map"));
+                map.setCenter(new GLatLng(37.36625,-120.423), 14);
+                map.addControl(new GSmallMapControl());
+                map.addControl(new GMapTypeControl());
+                map.addControl(new GScaleControl()); 
+		
+		var p501 = new GLatLng(37.36625,-120.423);
+		var marker1 = new GMarker(p501);
+		map.addOverlay(marker1);
+		GEvent.addListener(marker1, "click", function(){marker1.openInfoWindowHtml("Tree ID: 1, Height(in): 12, DBH: 5.25");});
+		
+		var p502 = new GLatLng(37.36619,-120.423);
+		var marker2 = new GMarker(p502);
+		map.addOverlay(marker2);
+		GEvent.addListener(marker2, "click", function(){marker2.openInfoWindowHtml("Tree ID: 2, Height(in): 7, DBH: 11");});
+		
+		var p503 = new GLatLng(37.36612,-120.423);
+		var marker3 = new GMarker(p503);
+		map.addOverlay(marker3);
+		GEvent.addListener(marker3, "click", function(){marker3.openInfoWindowHtml("Tree ID: 3, Height(in): 12, DBH: 18");});
+		
+		var p504 = new GLatLng(37.36609,-120.423);
+		var marker4 = new GMarker(p504);
+		map.addOverlay(marker4);
+		GEvent.addListener(marker4, "click", function(){marker4.openInfoWindowHtml("Tree ID: 4, Height(in): 10.5, DBH: 14.75");});
+		
+		
+		var p505 = new GLatLng(37.36603,-120.423);
+		var marker5 = new GMarker(p505);
+		map.addOverlay(marker5);
+		GEvent.addListener(marker5, "click", function(){marker5.openInfoWindowHtml("Tree ID: 5, Height(in): 8.5, DBH: 7.25");});
+		
+		
+		var p506 = new GLatLng(37.36597,-120.423);
+		var marker6 = new GMarker(p506);
+		map.addOverlay(marker6);
+		GEvent.addListener(marker6, "click", function(){marker6.openInfoWindowHtml("Tree ID: 6, Height(in): 13, DBH: 13.25");});
+		
+		
+		var p507 = new GLatLng(37.36591,-120.423);
+		var marker7 = new GMarker(p507);
+		map.addOverlay(marker7);
+		GEvent.addListener(marker7, "click", function(){marker7.openInfoWindowHtml("Tree ID: 7, Height(in): 9, DBH: 10.75");});
+		
+		
+		var p508 = new GLatLng(37.36586,-120.423);
+		var marker8 = new GMarker(p508);
+		map.addOverlay(marker8);
+		GEvent.addListener(marker8, "click", function(){marker8.openInfoWindowHtml("Tree ID: 8, Height(in): 8.25, DBH: 8.75");});
+		
+		
+		var p509 = new GLatLng(37.3658,-120.423);
+		var marker9 = new GMarker(p509);
+		map.addOverlay(marker9);
+		GEvent.addListener(marker9, "click", function(){marker9.openInfoWindowHtml("Tree ID: 9, Height(in): 9.5, DBH: 7");});
+		
+		
+		var p5010 = new GLatLng(37.36575,-120.423);
+		var marker10 = new GMarker(p5010);
+		map.addOverlay(marker10);
+		GEvent.addListener(marker10, "click", function(){marker10.openInfoWindowHtml("Tree ID: 10, Height(in): 10.5, DBH: 14.75");});
+		
+            }
+            google.setOnLoadCallback(initialize);
+        </script>
+	</head>
+	<body>
+
+		<!-- OPTIONAL: include this if you want history support -->
+		<iframe src="javascript:''" id="__gwt_historyFrame" style="width:0;height:0;border:0"></iframe>
+
+		<h1>Lab 7 - Google Maps API</h1>
+		<div id="search-form"></div>
+		<div id="map" style="height: 500px;">
+			Map goes here.
+		</div>
+
+		<table align=center>
+			<tr>
+				<td id="slot1"></td><td id="slot2"></td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,21 @@
+function myFunction1(){
+                var x;
+                var myCars = new Array();
+                myCars[0] = "Saab";
+                myCars[1] = "Volvo";
+                myCars[2] = "BMW";
+                for (x in myCars) {
+                                alert("Position " + x + " in the array is " + myCars[x]);
+                }
+}
+function myFunction2() {
+                var d = new Date();
+                var time = d.getHours();
+                if (time > 8 && time < 16) {alert("Time is: " + time);}
+                else {alert("Time is: " + time);}
+}
+function myFunction3() {
+                var t = new Array();
+                t[0] = "Slot 1";
+                alert(t[0]);
+}
